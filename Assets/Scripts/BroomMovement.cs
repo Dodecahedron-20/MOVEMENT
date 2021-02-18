@@ -9,8 +9,8 @@ public class BroomMovement : MonoBehaviour
     private float Speed;
 
     //All KeyCodes
-    [SerializeField]
-    private KeyCode GoForward;
+    //[SerializeField]
+    //private KeyCode GoForward;
     [SerializeField]
     private KeyCode Left;
     [SerializeField]
@@ -60,11 +60,8 @@ public class BroomMovement : MonoBehaviour
 
 
 
-        //speed additons, and movement on z
-        if (Input.GetKey(GoForward))
-        {
-            forward += 1;
-        }
+       
+        forward += 1;
 
         var movement = new Vector3(side, vert, forward).normalized * Speed * Time.deltaTime;
         transform.position += movement;
