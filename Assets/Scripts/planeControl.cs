@@ -14,7 +14,7 @@ public class planeControl : MonoBehaviour
     private float BurstSpeed = 80;
 
     [SerializeField]
-    private float burst = 2;
+    private float burst = 0.5f;
 
     private bool BurstAvailable = true;
     [SerializeField]
