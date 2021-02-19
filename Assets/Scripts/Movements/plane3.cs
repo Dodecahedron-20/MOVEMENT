@@ -14,7 +14,14 @@ public class plane3 : MonoBehaviour
     [SerializeField]
     private Transform playerBody;
 
-    
+    //rotation stabilization testing goes here:
+    [SerializeField]
+    private Transform basestate;
+
+    private void Start()
+    {
+       
+    }
 
     // Update is called once per frame
     void Update()
@@ -53,6 +60,16 @@ public class plane3 : MonoBehaviour
             y += 0.5f;
         }
 
+        //more stabililzation testing here
+
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            // rotX = current rotx - basestate ???? * basestate? + basestate?????? something like that????
+
+        }
+
+        //stabilizatin testing ends here (for now)
 
 
         //movement
@@ -63,7 +80,7 @@ public class plane3 : MonoBehaviour
             z = 2;
         }
 
-
+        // re- stabilisation isn't happening because we're not working in world space, but player space, and 0 is always where the player is facing (or something like that anyways?)
         playerBody.Rotate(Vector3.up * rotY + Vector3.right * rotX + Vector3.forward * rotZ);
 
 
