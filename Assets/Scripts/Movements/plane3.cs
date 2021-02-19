@@ -23,16 +23,22 @@ public class plane3 : MonoBehaviour
 
         var rotY = 0f;
         var rotX = 0f;
+        var rotZ = 0f;
 
         var y = 0f;
+        var x = 0f;
 
         if (Input.GetKey(KeyCode.A))
         {
             rotY -= banking;
+            rotZ = banking;
+            x -= 1f;
         }
         if (Input.GetKey(KeyCode.D))
         {
             rotY += banking;
+            rotZ = -banking;
+            x += 1f;
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -47,27 +53,23 @@ public class plane3 : MonoBehaviour
             y += 0.5f;
         }
 
-        //if (Input.GetKeyUp(KeyCode.W))
-        //{
-        //    rotX = 0;
-        //}
-        //if (Input.GetKeyUp(KeyCode.S))
-        //{
-        //    rotX = 0;
-        //}
-
-        // transform.rotation = Quaternion.Euler(0, rotY, 0);
-
-
-        playerBody.Rotate(Vector3.up * rotY + Vector3.right * rotX);
-
+        //movement
         float z = 1;
 
-        //float x = Input.GetAxis("Horizontal");
-        //float y = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.Space))
+        {
+            z = 2;
+        }
 
 
-        Vector3 move = transform.forward * z;
+        playerBody.Rotate(Vector3.up * rotY + Vector3.right * rotX + Vector3.forward * rotZ);
+
+
+
+       
+
+
+        Vector3 move = transform.forward * z + transform.up * y + transform.right * x;
 
 
         controller.Move(move * speed * Time.deltaTime);
