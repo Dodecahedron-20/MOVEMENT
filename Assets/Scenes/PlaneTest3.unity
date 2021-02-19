@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 133634862}
-  speed: 20
+  speed: 40
   playerBody: {fileID: 133634863}
 --- !u!1 &243971525
 GameObject:

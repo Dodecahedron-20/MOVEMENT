@@ -13,8 +13,9 @@ public class GM : MonoBehaviour
   private int Points = 0;
   //points gems are worth on collection.
   [SerializeField]
-  private int Gempoints = 10;
-
+  private int starpoints = 10;
+    [SerializeField]
+    private int goldstarpoints = 40;
 
 
 
@@ -58,10 +59,15 @@ public class GM : MonoBehaviour
 
     private void PointsAdd()
     {
-      Points = Points + Gempoints;
+      Points = Points + starpoints;
       PointsText.text = "Points: " + Points;
     }
 
+    private void StarPointsAdd()
+    {
+        Points = Points + goldstarpoints;
+        PointsText.text = "Points: " + Points;
+    }
 
     private void CheckHealth()
     {

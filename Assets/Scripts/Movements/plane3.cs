@@ -30,28 +30,30 @@ public class plane3 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            rotY -= banking;
+            rotY = -banking;
             rotZ = banking;
             x -= 1f;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rotY += banking;
+            rotY = banking;
             rotZ = -banking;
             x += 1f;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            rotX -= banking;
+            rotX = -banking;
             y -= 0.5f;
         }
         if (Input.GetKey(KeyCode.S))
         {
 
-            rotX += banking;
+            rotX = banking;
             y += 0.5f;
         }
+
+
 
         //movement
         float z = 1;
