@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class planeControl : MonoBehaviour
+public class BackupMoveStash : MonoBehaviour
 {
     [SerializeField]
     private float BaseSpeed = 20;
@@ -38,7 +38,7 @@ public class planeControl : MonoBehaviour
 
     void start()
     {
-      speed = BaseSpeed;
+        speed = BaseSpeed;
     }
 
 
@@ -88,8 +88,8 @@ public class planeControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && BurstAvailable == true)
         {
 
-          SpeedBurst();
-          StartCoroutine(SpeedBurstTimer());
+            SpeedBurst();
+            StartCoroutine(SpeedBurstTimer());
 
         }
 
@@ -108,37 +108,33 @@ public class planeControl : MonoBehaviour
         transform.rotation = Quaternion.Euler(SmoothRotX, SmoothRotY, SmoothRotZ);
     }
 
-private void SpeedBurst()
-{
-  speed = BurstSpeed;
-  BurstAvailable = false;
-}
+    private void SpeedBurst()
+    {
+        speed = BurstSpeed;
+        BurstAvailable = false;
+    }
 
 
-IEnumerator SpeedBurstTimer()
-{
- yield return new WaitForSeconds(burst);
-SpeedBurstOver();
+    IEnumerator SpeedBurstTimer()
+    {
+        yield return new WaitForSeconds(burst);
+        SpeedBurstOver();
 
-}
+    }
 
-private void SpeedBurstOver()
-{
-  speed = BaseSpeed;
-  StartCoroutine(BurstBackTimer());
+    private void SpeedBurstOver()
+    {
+        speed = BaseSpeed;
+        StartCoroutine(BurstBackTimer());
 
-}
+    }
 
-IEnumerator BurstBackTimer()
-{
+    IEnumerator BurstBackTimer()
+    {
 
- yield return new WaitForSeconds(burstoffline);
+        yield return new WaitForSeconds(burstoffline);
 
-BurstAvailable = true;
+        BurstAvailable = true;
 
-}
-
-
-
-
+    }
 }

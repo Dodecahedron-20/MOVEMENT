@@ -18,7 +18,7 @@ public class GM : MonoBehaviour
 
 
 
-// the UI text goes here
+    // the UI text goes here
   [SerializeField]
   private Text HealthText;
   [SerializeField]
@@ -47,11 +47,13 @@ public class GM : MonoBehaviour
 
 
 
-
-    private void damage()
+    public void Damage()
     {
-      Health --;
-      HealthText.text = "Health: " + Health;
+        Health --;
+        HealthText.text = "Health: " + Health;
+        CheckHealth();
+
+
     }
 
     private void PointsAdd()
@@ -61,9 +63,21 @@ public class GM : MonoBehaviour
     }
 
 
+    private void CheckHealth()
+    {
+        if (Health == 0)
+        {
+            Crash();
+        }
+    }
+
+    private void Crash()
+    {
 
 
 
+
+    }
 
 
 }
