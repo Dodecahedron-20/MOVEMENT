@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class plane3 : MonoBehaviour
 {
@@ -15,12 +16,22 @@ public class plane3 : MonoBehaviour
     private Transform playerBody;
 
     //rotation stabilization testing goes here:
+    //[SerializeField]
+    //private Transform basestate;
+
     [SerializeField]
-    private Transform basestate;
+    private GameObject Testing;
+
+    private float counterbalanceX = 0f;
+
+    //testing some text for the counterbalance stuff goes here:
+    [SerializeField]
+    private Text CounterbalanceText;
 
     private void Start()
     {
-       
+      Testing.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -34,6 +45,8 @@ public class plane3 : MonoBehaviour
 
         var y = 0f;
         var x = 0f;
+
+
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -51,7 +64,9 @@ public class plane3 : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             rotX = -banking;
-            y -= 0.5f;
+
+            y -= 1f;
+            updateCounterbalance();
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -65,7 +80,10 @@ public class plane3 : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.W))
         {
-            // rotX = current rotx - basestate ???? * basestate? + basestate?????? something like that????
+          Testing.SetActive(true);
+
+             rotX = +counterbalanceX;
+             counterbalanceX = 0;
 
         }
 
@@ -85,7 +103,7 @@ public class plane3 : MonoBehaviour
 
 
 
-       
+
 
 
         Vector3 move = transform.forward * z + transform.up * y + transform.right * x;
@@ -97,4 +115,17 @@ public class plane3 : MonoBehaviour
 
 
     }
+
+private void updateCounterbalance()
+{
+  counterbalanceX = counterbalanceX + 0.1f;
+  CounterbalanceText.text = "counterX: " + counterbalanceX;
+
+}
+//oh yeah (((?????????????)))
+
+
+
+
+
 }
