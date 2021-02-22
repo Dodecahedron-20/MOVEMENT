@@ -5,7 +5,8 @@ using UnityEngine;
 public class obstacles : MonoBehaviour
 {
 
-
+    [SerializeField]
+    private GameObject testCube = null;
     [SerializeField]
     private GM gm;
 
@@ -25,6 +26,7 @@ public class obstacles : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        testCube.SetActive(true);
         gm.Damage();
     }
 

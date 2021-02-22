@@ -23,19 +23,6 @@ public class MenuMain : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     //Settings Menus:
     //turn Settings menu on
     public void CreditsOn()

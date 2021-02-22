@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class GM : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class GM : MonoBehaviour
   private int Health = 3;
 
   [SerializeField]
-  private int Points = 0;
+  private int points = 0;
   //points gems are worth on collection.
   [SerializeField]
   private int starpoints = 10;
@@ -24,18 +26,32 @@ public class GM : MonoBehaviour
   private Text HealthText;
   [SerializeField]
   private Text PointsText;
-  //[SerializeField]
+    //[SerializeField]
+
+    //Pause Menu:
+    [SerializeField]
+    private GameObject pauseMenu = null;
+    private bool paused = false;
 
 
 
+    //EndgameScreen:
+    [SerializeField]
+    private GameObject winScreen = null;
+    [SerializeField]
+    private Text finalPointsText = null;
 
+
+    //that testing object once more:
+    [SerializeField]
+    private GameObject Testingtesting = null;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-      PointsText.text = "Points: " + Points;
+        Time.timeScale = 1;
+      PointsText.text = "Points: " + points;
       HealthText.text = "Health: " + Health;
 
     }
@@ -44,29 +60,86 @@ public class GM : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (paused == false)
+            {
+                PauseMenuON();
+            }
+            else
+            {
+                PauseMenuOFF();
+            }
+
+        }
+
     }
 
 
 
+    // Pause Menu things:
+
+    private void PauseMenuON()
+    {
+        paused = true;
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+        
+
+    }
+
+    //pause Menu Buttons
+    private void PauseMenuOFF()
+    {
+        paused = false;
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+    }
+
+    public void Resume()
+    {
+        PauseMenuOFF();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Resign()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+
+ 
+
+  
+
+
+    public void PointsAdd()
+    {
+        points = +starpoints;
+        PointsText.text = "Points: " + points;
+        //Testingtesting.SetActive(true);
+
+    }
+
+    public void StarPointsAdd()
+    {
+        points = +goldstarpoints;
+        PointsText.text = "Points: " + points;
+    }
+
+    //health and crashing:
+
     public void Damage()
     {
-        Health --;
+        Health--;
         HealthText.text = "Health: " + Health;
         CheckHealth();
 
 
-    }
-
-    private void PointsAdd()
-    {
-      Points = Points + starpoints;
-      PointsText.text = "Points: " + Points;
-    }
-
-    private void StarPointsAdd()
-    {
-        Points = Points + goldstarpoints;
-        PointsText.text = "Points: " + Points;
     }
 
     private void CheckHealth()
@@ -84,6 +157,19 @@ public class GM : MonoBehaviour
 
 
     }
+
+
+
+    public void WinGame()
+    {
+        winScreen.SetActive(true);
+        finalPointsText.text = "Final Points: " + points;
+        Time.timeScale = 0;
+    }
+
+
+
+
 
 
 }

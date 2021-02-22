@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stars : MonoBehaviour
+public class Win : MonoBehaviour
 {
 
     [SerializeField]
     private GM gm;
-
-    //[SerializeField]
-    //private ParticleSystem collectParticles;
-    //[SerializeField]
-    //private AudioSource collectSound;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +20,13 @@ public class Stars : MonoBehaviour
         
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
-        gm.PointsAdd();
-        //collectParticles.Play();
-        //collectSound.Play();
-        
+
+        gm.WinGame();
+
     }
+
 
 
 
