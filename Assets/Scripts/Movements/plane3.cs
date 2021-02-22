@@ -30,11 +30,11 @@ public class plane3 : MonoBehaviour
 
 
 
-    private float counterbalanceX = 0f;
+    //private float counterbalanceX = 0f;
 
-    //testing some text for the counterbalance stuff goes here:
-    [SerializeField]
-    private Text CounterbalanceText;
+    ////testing some text for the counterbalance stuff goes here:
+    //[SerializeField]
+    //private Text CounterbalanceText;
 
     private void Start()
     {
@@ -126,12 +126,12 @@ public class plane3 : MonoBehaviour
     }
     // so. we're re-rotating, just. snapping back. which. don't like that.
 
-private void updateCounterbalance()
-{
-  counterbalanceX = counterbalanceX + 0.1f;
-  CounterbalanceText.text = "counterX: " + counterbalanceX;
+//private void updateCounterbalance()
+//{
+//  counterbalanceX = counterbalanceX + 0.1f;
+//  CounterbalanceText.text = "counterX: " + counterbalanceX;
 
-}
+//}
 
 
 

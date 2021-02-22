@@ -2396,6 +2396,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2364083596925510623, guid: 22df67e3e1d9c43bdbdd47d0afd8b61e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734398100961229649, guid: 22df67e3e1d9c43bdbdd47d0afd8b61e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3326622305765412203, guid: 22df67e3e1d9c43bdbdd47d0afd8b61e, type: 3}
       propertyPath: CounterbalanceText
       value: 
@@ -2452,7 +2460,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BIplane
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3326622305858137192, guid: 22df67e3e1d9c43bdbdd47d0afd8b61e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7468398649812278474, guid: 22df67e3e1d9c43bdbdd47d0afd8b61e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 22df67e3e1d9c43bdbdd47d0afd8b61e, type: 3}
 --- !u!1001 &7090886917068472544
 PrefabInstance:
