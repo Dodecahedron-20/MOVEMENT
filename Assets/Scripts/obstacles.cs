@@ -26,6 +26,7 @@ public class obstacles : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Boom 1");
         testCube.SetActive(true);
         gm.Damage();
     }
