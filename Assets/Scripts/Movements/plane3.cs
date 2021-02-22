@@ -15,12 +15,20 @@ public class plane3 : MonoBehaviour
     [SerializeField]
     private Transform playerBody;
 
+    [SerializeField]
+    private float banking = 0.6f;
+
+    [SerializeField]
+    private float turn = 0.5f;
+
+    [SerializeField]
+    private float rise = 0.2f;
+
     //rotation stabilization testing goes here:
     //[SerializeField]
     //private Transform basestate;
 
-    [SerializeField]
-    private GameObject Testing;
+
 
     private float counterbalanceX = 0f;
 
@@ -30,14 +38,14 @@ public class plane3 : MonoBehaviour
 
     private void Start()
     {
-      Testing.SetActive(false);
+      
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        float banking = 0.1f;
+        
 
         var rotY = 0f;
         var rotX = 0f;
@@ -50,42 +58,43 @@ public class plane3 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            rotY = -banking;
+            //rotY = -turn;
             rotZ = banking;
-            x -= 1f;
+           // x -= 1f;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rotY = banking;
             rotZ = -banking;
-            x += 1f;
+
+            //rotY = turn;
+
+            //x += 1f;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            rotX = -banking;
+            rotX = -rise;
 
-            y -= 1f;
-            updateCounterbalance();
+           // y -= 1f;
+            //updateCounterbalance();
         }
         if (Input.GetKey(KeyCode.S))
         {
 
-            rotX = banking;
-            y += 0.5f;
+            rotX = rise;
+          //  y -= 0.5f;
         }
 
         //more stabililzation testing here
 
 
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-          Testing.SetActive(true);
+        //if (Input.GetKeyUp(KeyCode.W))
+        //{
 
-             rotX = +counterbalanceX;
-             counterbalanceX = 0;
 
-        }
+        //    rotX = +counterbalanceX;
+        //    counterbalanceX = 0;
+        //}
 
         //stabilizatin testing ends here (for now)
 
@@ -115,6 +124,7 @@ public class plane3 : MonoBehaviour
 
 
     }
+    // so. we're re-rotating, just. snapping back. which. don't like that.
 
 private void updateCounterbalance()
 {
@@ -122,7 +132,7 @@ private void updateCounterbalance()
   CounterbalanceText.text = "counterX: " + counterbalanceX;
 
 }
-//oh yeah (((?????????????)))
+
 
 
 

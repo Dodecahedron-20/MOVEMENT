@@ -21,7 +21,7 @@ public class planeControl : MonoBehaviour
     [SerializeField]
     private int burstoffline = 4;
 
-    //private Vector3 position = new Vector3(0, 1, 0);
+    
 
     [SerializeField]
     private float banking = 20;
@@ -95,10 +95,13 @@ public class planeControl : MonoBehaviour
         }
 
 
-
+        //movement:
 
         var movement = new Vector3(horiz, vert, go) * speed * Time.deltaTime;
         transform.position += movement;
+
+
+        //rotation:
 
         float SmoothRotZ = Mathf.SmoothDampAngle(transform.eulerAngles.z, RotZ, ref RotSmoothVelocityZ, RotSmoothTime);
         float SmoothRotX = Mathf.SmoothDampAngle(transform.eulerAngles.x, RotX, ref RotSmoothVelocityX, RotSmoothTime);
@@ -108,6 +111,11 @@ public class planeControl : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(SmoothRotX, SmoothRotY, SmoothRotZ);
     }
+
+
+
+
+    //Burst of speed things:
 
     private void SpeedBurst()
     {
