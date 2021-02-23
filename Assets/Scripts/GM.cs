@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class GM : MonoBehaviour
 {
 
-  [SerializeField]
-  private int Health = 3;
+  //[SerializeField]
+  //private int Health = 3;
 
   [SerializeField]
   private int points = 0;
@@ -18,15 +18,20 @@ public class GM : MonoBehaviour
   private int starpoints = 10;
     [SerializeField]
     private int goldstarpoints = 40;
-
+    [SerializeField]
+    private Win win;
 
 
     // the UI text goes here
   [SerializeField]
-  private Text HealthText;
+  private Text livesText;
   [SerializeField]
   private Text PointsText;
-    //[SerializeField]
+    [SerializeField]
+    private int lives = 3;
+
+    [SerializeField]
+    private ParticleSystem dmg;
 
     //Pause Menu:
     [SerializeField]
@@ -42,9 +47,7 @@ public class GM : MonoBehaviour
     private Text finalPointsText = null;
 
 
-    //that testing object once more:
-    [SerializeField]
-    private GameObject Testingtesting = null;
+
 
 
     // Start is called before the first frame update
@@ -52,7 +55,8 @@ public class GM : MonoBehaviour
     {
         Time.timeScale = 1;
       PointsText.text = "Points: " + points;
-      //HealthText.text = "Health: " + Health;
+        livesText.text = "Lives: " + lives;
+
 
     }
 
@@ -125,7 +129,9 @@ public class GM : MonoBehaviour
         Debug.Log("Star! Collect!");
         points += starpoints;
         PointsText.text = "Points: " + points;
-        
+        win.StarAdd();
+
+
 
     }
 
@@ -137,36 +143,23 @@ public class GM : MonoBehaviour
 
     //health and crashing:
 
-    public void Damage()
+    public void LooseLife()
     {
-        Health--;
-        HealthText.text = "Health: " + Health;
-        //CheckHealth();
-
-
+        lives--;
+        livesText.text = "Lives: " + lives;
+        dmg.Play();
     }
 
-    //private void CheckHealth()
+    //public void Damage()
     //{
-    //    if (Health > 1)
-    //    {
-    //        Crash();
-    //    }
-    //}
-
-    //private void Crash()
-    //{
-
-    //    Time.timeScale = 0;
-
-
-    //}
-
-    //public void AddHealth()
-    //{
-    //    Health++;
+    //    Health--;
     //    HealthText.text = "Health: " + Health;
+    //    //CheckHealth();
+
+
     //}
+
+   
 
     public void WinGame()
     {

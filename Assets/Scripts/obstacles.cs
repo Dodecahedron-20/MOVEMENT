@@ -23,14 +23,15 @@ public class obstacles : MonoBehaviour
         
     }
 
-   private void OnCollisionEnter(Collision collision)
-    {
-        gm.Damage();
-    }
+   //private void OnCollisionEnter(Collision collision)
+   // {
+   //     Debug.Log("Boom");
+   //     gm.LooseLife();
+   // }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    gm.Damage();
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        gm.LooseLife();
+    }
 
 }

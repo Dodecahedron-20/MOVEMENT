@@ -8,22 +8,20 @@ public class Win : MonoBehaviour
     [SerializeField]
     private GM gm;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int collectedStars = 0;
 
-    // Update is called once per frame
-    void Update()
+  public void StarAdd()
     {
-        
+        collectedStars++;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
-        gm.WinGame();
+        if (collectedStars > 1)
+        {
+            gm.WinGame();
+        }
+        
 
     }
 
