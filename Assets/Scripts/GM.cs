@@ -12,12 +12,9 @@ public class GM : MonoBehaviour
   //private int Health = 3;
 
   [SerializeField]
-  private int points = 0;
+  private int stars = 0;
   //points gems are worth on collection.
-  [SerializeField]
-  private int starpoints = 10;
-    [SerializeField]
-    private int goldstarpoints = 40;
+
     [SerializeField]
     private Win win;
 
@@ -44,7 +41,7 @@ public class GM : MonoBehaviour
     [SerializeField]
     private GameObject winScreen = null;
     [SerializeField]
-    private Text finalPointsText = null;
+    private Text finalStarsText = null;
 
 
 
@@ -54,7 +51,7 @@ public class GM : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-      PointsText.text = "Points: " + points;
+      PointsText.text = "Stars: " + stars;
         livesText.text = "Lives: " + lives;
 
 
@@ -127,19 +124,14 @@ public class GM : MonoBehaviour
     public void PointsAdd()
     {
         Debug.Log("Star! Collect!");
-        points += starpoints;
-        PointsText.text = "Points: " + points;
+        stars ++;
+        PointsText.text = "Stars: " + stars;
         win.StarAdd();
 
 
 
     }
 
-    public void StarPointsAdd()
-    {
-        points = +goldstarpoints;
-        PointsText.text = "Points: " + points;
-    }
 
     //health and crashing:
 
@@ -164,7 +156,7 @@ public class GM : MonoBehaviour
     public void WinGame()
     {
         winScreen.SetActive(true);
-        finalPointsText.text = "Final Points: " + points;
+        finalStarsText.text = "Final Stars: " + stars;
         Time.timeScale = 0;
     }
 
