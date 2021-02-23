@@ -569,6 +569,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6896316040375626798}
+  - component: {fileID: 2098360328258712306}
+  - component: {fileID: 3550432534304804166}
+  - component: {fileID: 8051963170365210708}
+  - component: {fileID: 8895717389789326975}
   m_Layer: 0
   m_Name: tree 2
   m_TagString: Untagged
@@ -592,6 +596,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2098360328258712306
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594569081392842459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5615807, y: 2.3880367, z: 6.555048}
+  m_Center: {x: 0.14088058, y: 11.929257, z: 1.5029726}
+--- !u!65 &3550432534304804166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594569081392842459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5338516, y: 1.9404774, z: 7.6421967}
+  m_Center: {x: 0.4541068, y: 8.894641, z: -1.1941047}
+--- !u!65 &8051963170365210708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594569081392842459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 8.230582, z: 1}
+  m_Center: {x: 0, y: 3.615291, z: 0}
+--- !u!114 &8895717389789326975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594569081392842459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557b820a56d31be41badeec393b8ea57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &4750063515500504434
 GameObject:
   m_ObjectHideFlags: 0

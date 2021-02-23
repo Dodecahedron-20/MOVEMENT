@@ -29,6 +29,8 @@ public class GM : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem dmg;
+    [SerializeField]
+    private ParticleSystem fire;
 
     //Pause Menu:
     [SerializeField]
@@ -43,6 +45,8 @@ public class GM : MonoBehaviour
     [SerializeField]
     private Text finalStarsText = null;
 
+    [SerializeField]
+    private GameObject looseScreen = null;
 
 
 
@@ -140,16 +144,25 @@ public class GM : MonoBehaviour
         lives--;
         livesText.text = "Lives: " + lives;
         dmg.Play();
+        CheckLife();
     }
 
-    //public void Damage()
-    //{
-    //    Health--;
-    //    HealthText.text = "Health: " + Health;
-    //    //CheckHealth();
+    private void CheckLife()
+    {
+        if (lives < 1)
+        {
+            Crash();
+        }
+    }
 
+    private void Crash()
+    {
+        dmg.Play();
+        fire.Play();
+        looseScreen.SetActive(true);
 
-    //}
+    }
+
 
    
 
