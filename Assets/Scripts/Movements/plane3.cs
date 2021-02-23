@@ -18,13 +18,13 @@ public class plane3 : MonoBehaviour
     private Transform playerBody;
 
     [SerializeField]
-    private float banking = 0.8f;
+    private float banking = 20f;
 
     [SerializeField]
     private float turn = 0.7f;
 
     [SerializeField]
-    private float rise = 0.4f;
+    private float rise = 2f;
 
     private bool moveable = false;
 

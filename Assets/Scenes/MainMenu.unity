@@ -259,15 +259,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1687878624915582244, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 1687878624915582244, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1687878624915582244, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1687878624915582244, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -300,6 +300,14 @@ PrefabInstance:
     - target: {fileID: 4640470530837598370, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_Text
       value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640470530837598370, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640470530837598370, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5391245264578642705, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1089,6 +1097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 142545515421594872, guid: 4b72ba98b4495b542bd0ed3ba863d824, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1007338446646021843, guid: 4b72ba98b4495b542bd0ed3ba863d824, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1246,7 +1258,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -40}
+  m_AnchoredPosition: {x: 340, y: -40}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1306580625
@@ -1479,7 +1491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: 80}
+  m_AnchoredPosition: {x: 340, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1471803384
@@ -1633,7 +1645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1269618336955366685, guid: 4b72ba98b4495b542bd0ed3ba863d824, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -200
+      value: -110
       objectReference: {fileID: 0}
     - target: {fileID: 1269618336955366685, guid: 4b72ba98b4495b542bd0ed3ba863d824, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1954,7 +1966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.84705883, g: 0.8117647, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1962,7 +1974,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f415dd3d3a1ecda459e40efb9d54841b, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -2608,11 +2620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1687878624915582244, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1687878624915582244, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1687878624915582244, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2645,6 +2657,14 @@ PrefabInstance:
     - target: {fileID: 4640470530837598370, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_Text
       value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640470530837598370, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640470530837598370, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5391245264578642705, guid: ddcbc75dc62154c748f076d89a9a523c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
