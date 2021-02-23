@@ -52,7 +52,7 @@ public class GM : MonoBehaviour
     {
         Time.timeScale = 1;
       PointsText.text = "Points: " + points;
-      HealthText.text = "Health: " + Health;
+      //HealthText.text = "Health: " + Health;
 
     }
 
@@ -111,7 +111,10 @@ public class GM : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-
+    public void Star()
+    {
+        Debug.Log("Star");
+    }
  
 
   
@@ -119,9 +122,10 @@ public class GM : MonoBehaviour
 
     public void PointsAdd()
     {
-        points = +starpoints;
+        Debug.Log("Star! Collect!");
+        points += starpoints;
         PointsText.text = "Points: " + points;
-        //Testingtesting.SetActive(true);
+        
 
     }
 
@@ -137,28 +141,32 @@ public class GM : MonoBehaviour
     {
         Health--;
         HealthText.text = "Health: " + Health;
-        CheckHealth();
+        //CheckHealth();
 
 
     }
 
-    private void CheckHealth()
-    {
-        if (Health == 0)
-        {
-            Crash();
-        }
-    }
+    //private void CheckHealth()
+    //{
+    //    if (Health > 1)
+    //    {
+    //        Crash();
+    //    }
+    //}
 
-    private void Crash()
-    {
+    //private void Crash()
+    //{
 
-
-
-
-    }
+    //    Time.timeScale = 0;
 
 
+    //}
+
+    //public void AddHealth()
+    //{
+    //    Health++;
+    //    HealthText.text = "Health: " + Health;
+    //}
 
     public void WinGame()
     {

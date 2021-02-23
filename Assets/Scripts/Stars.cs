@@ -8,6 +8,9 @@ public class Stars : MonoBehaviour
     [SerializeField]
     private GM gm;
 
+    [SerializeField]
+    private GameObject thisStar = null;
+
     //[SerializeField]
     //private ParticleSystem collectParticles;
     //[SerializeField]
@@ -28,7 +31,9 @@ public class Stars : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hit Star");
         gm.PointsAdd();
+        Destroy(thisStar);
         //collectParticles.Play();
         //collectSound.Play();
         

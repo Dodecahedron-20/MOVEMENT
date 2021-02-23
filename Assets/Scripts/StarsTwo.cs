@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class obstacles : MonoBehaviour
+public class StarsTwo : MonoBehaviour
 {
-
-
     [SerializeField]
     private GM gm;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +19,12 @@ public class obstacles : MonoBehaviour
         
     }
 
-   private void OnCollisionEnter(Collision collision)
-    {
-        gm.Damage();
-    }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    gm.Damage();
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+
+        gm.Star();
+
+    }
 
 }
