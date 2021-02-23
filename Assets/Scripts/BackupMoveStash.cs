@@ -4,6 +4,38 @@ using UnityEngine;
 
 public class BackupMoveStash : MonoBehaviour
 {
+  //A lock movement script for when crashed/win Vector3
+
+
+//in update:
+
+
+
+//in Crash:
+
+
+
+//note to self, turn off "backgounds" is causeing weird -7 health glitch.
+//do I have time to find and implement audio?
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     [SerializeField]
     private float BaseSpeed = 20;
     [SerializeField]

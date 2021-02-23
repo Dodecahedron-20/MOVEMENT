@@ -32,6 +32,10 @@ public class GM : MonoBehaviour
     [SerializeField]
     private ParticleSystem fire;
 
+    //beginging of the game; "quest" + controls
+    [SerializeField]
+    private GameObject startScreen = null;
+
     //Pause Menu:
     [SerializeField]
     private GameObject pauseMenu = null;
@@ -41,12 +45,18 @@ public class GM : MonoBehaviour
 
     //EndgameScreen:
     [SerializeField]
+    private GameObject canwin = null;
+    [SerializeField]
     private GameObject winScreen = null;
     [SerializeField]
     private Text finalStarsText = null;
 
     [SerializeField]
     private GameObject looseScreen = null;
+
+    //player script:
+    [SerializeField]
+    private plane3 player;
 
 
 
@@ -55,7 +65,7 @@ public class GM : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-      PointsText.text = "Stars: " + stars;
+        PointsText.text = "Stars: " + stars;
         livesText.text = "Lives: " + lives;
 
 
@@ -80,6 +90,13 @@ public class GM : MonoBehaviour
 
     }
 
+    //the beginging of the game:
+
+  public void GameStart()
+  {
+    startScreen.SetActive(false);
+  }
+
 
 
     // Pause Menu things:
@@ -89,7 +106,7 @@ public class GM : MonoBehaviour
         paused = true;
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
-        
+
 
     }
 
@@ -120,19 +137,16 @@ public class GM : MonoBehaviour
     {
         Debug.Log("Star");
     }
- 
 
-  
+
+
 
 
     public void PointsAdd()
     {
-        Debug.Log("Star! Collect!");
         stars ++;
         PointsText.text = "Stars: " + stars;
         win.StarAdd();
-
-
 
     }
 
@@ -157,19 +171,28 @@ public class GM : MonoBehaviour
 
     private void Crash()
     {
+        canwin.SetActive(false);
         dmg.Play();
         fire.Play();
         looseScreen.SetActive(true);
+        player.Freeze();
 
     }
 
 
-   
+    public void CanWin()
+    {
+      canwin.SetActive(true);
+    }
+
+
+
 
     public void WinGame()
     {
+        canwin.SetActive(false);
         winScreen.SetActive(true);
-        finalStarsText.text = "Final Stars: " + stars;
+        finalStarsText.text = "Final Stars: " + stars + "/6";
         Time.timeScale = 0;
     }
 
